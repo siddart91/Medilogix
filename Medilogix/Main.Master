@@ -1,0 +1,203 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Medilogix.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Lavaggio Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/main.js"></script>
+<!---- start-smooth-scrolling---->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!---end-smooth-scrolling-->
+<!--start-top-nav-script-->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+<!--End-top-nav-script-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--start-header-->
+					<div class="header" id="home">
+						<div class="container">
+							<div class="logo">
+								<a href="Home.aspx"><img src="images/logo.png" alt="logo" style="width: 72%;"></a>  
+							</div>
+							<!--start-top-nav-->
+							 <nav class="top-nav">
+								<ul class="top-nav">
+									<li><a href="Home.aspx" class="active">Home</a></li>|
+									<li><a href="AboutUs.aspx">About Us</a></li>|									
+									<li><a href="Services.aspx">Order Delivery/Vaccine</a></li>|
+									<li><a href="#">Ship Online</a></li>|									
+									<li><a href="Contact.aspx">Contact</a></li>
+								</ul>
+								<a href="#" id="pull"><img src="images/menu-icon.png" title="menu" /></a>
+							</nav>
+                            <div class="Account">
+                                <script type="text/javascript"> 
+    function pageLoad() { 
+        LoginW();
+        AccW();
+  } 
+</script>
+                                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                <asp:UpdatePanel ID="upAc" runat="server" UpdateMode="Conditional" style="position: relative;">
+                                    <ContentTemplate>
+                                        <asp:Panel id="pAc1" runat="server" Visible="true" CssClass="acc">
+                                            <ul>
+                                                <li><a class="mylog" id="log">Login</a></li>&nbsp;|
+                                                <li><a href="Register.aspx">Register</a></li>
+                                            </ul>
+                                        </asp:Panel>
+                                        <asp:Panel class="Name" ID="pAC2" runat="server" Visible="false">
+                                            <asp:Label ID="lblName" runat="server" Text="Hi Siddharth" CssClass="MyAcc"></asp:Label>
+                                        </asp:Panel>
+                                        <asp:Panel ID="pAL" runat="server" Visible="true" CssClass="Login-Widget">
+                                            <%--<asp:Label ID="lblLStatus" runat="server" Visible="true" Text="Login failed"></asp:Label><br />--%>
+                                            <div class="tri"></div>
+                                            <asp:TextBox class="mylog" ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox><br />
+                                              <asp:TextBox class="mylog" ID="txtPass" runat="server" TextMode="Password" placeholder="Password"></asp:TextBox><br />
+                                               <asp:Button class="mylog" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
+                                            <div class="mylog" style="margin-left: auto; margin-right: auto; width: 63%;">                                                
+                                                <a class="mylog" href="#" style="font-size: 12px; color: rgb(66, 176, 212);">Forget Password?</a>
+                                            </div>
+                                        </asp:Panel>
+                                        <asp:Panel ID="pAI" runat="server" CssClass="Acc-Widget" Visible="true">
+                                            <div class="tri"></div>
+                                            <asp:LinkButton ID="lbtnPro" runat="server" CssClass="MyAcc">Profile</asp:LinkButton>
+                                            <asp:LinkButton ID="lbtnOrder" runat="server" CssClass="MyAcc">My Orders</asp:LinkButton>
+                                            <asp:Button ID="btnLogOut" runat="server" Text="Logout" OnClick="btnLogOut_Click"/>
+                                        </asp:Panel>
+                                        <asp:Panel id="pStat" CssClass="L-stat L-stat-Hide" runat="server" Visible="true">
+                                            <asp:Label ID="lblSat" runat="server" Text="Enter correct Email or password"></asp:Label>
+                                        </asp:Panel>
+                                    </ContentTemplate>
+                                    <Triggers >
+                                        <asp:AsyncPostBackTrigger ControlID="btnLogin" EventName="Click" />
+                                    </Triggers>
+                                    
+                                </asp:UpdatePanel>                                
+                            </div>
+							<div class="clearfix"> </div>
+						</div>
+				</div>
+		<!--End-header-->	
+		<!--start-search-->
+			<div class="search">
+				<div class="container">
+					<div class="search-main">
+						<ul>
+							<%--<li>
+								<div class="login">
+									<a href="login.html">Login</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="register.html">Register</a>
+								</div>
+							</li>	--%>
+							<li>
+								<div class="search-top">
+                                    <input type="submit" value="Track  ">
+									<input type="text"  placeholder="Tracking Number">
+									
+
+								</div>
+							</li>
+						</ul>
+						<%--<span></span>--%>
+					</div>
+				</div>
+			</div>
+		<!--End-search-->	
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-main">
+				<div class="col-md-8 footer-left">
+					<ul>
+						<li><a href="Home.aspx" class="active">Home</a></li>&nbsp;/
+						<li><a href="AboutUs.aspx">About Us</a></li>&nbsp;/
+					
+						<li><a href="Services.aspx">Order Delivery/Vaccine</a></li>&nbsp;/
+						<%--<li><a href="clients.html">Clients</a></li>&nbsp;/--%>
+						
+						<li><a href="Contact.aspx">Contact</a></li>
+					</ul>
+					<p>Developed By<a href="#"> MasterTech Solution</a></p>
+				</div>
+				<div class="col-md-2 footer-middle">
+					<h3>Contact Us</h3>
+					<p><a href="#">info@medilogix.com</a></p>
+				</div>
+				<div class="col-md-2 footer-right">
+					<h3>Follow Us On...</h3>
+					<ul>
+						<li><a href="#"><span class="twit"> </span></a></li>
+						<li><a href="#"><span class="fb"> </span></a></li>
+						<li><a href="#"><span class="in"> </span></a></li>
+						<li><a href="#"><span class="o"> </span></a></li>
+						<li><a href="#"><span class="v"> </span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+	</div>
+	<!--End-footer-->	
+    </div>
+    </form>
+</body>
+</html>
