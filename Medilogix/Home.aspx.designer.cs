@@ -13,94 +13,112 @@ namespace Medilogix {
     public partial class Home {
         
         /// <summary>
-        /// ddlOCountry control.
+        /// ddltoCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOCountry;
+        protected global::System.Web.UI.WebControls.DropDownList ddltoCountry;
         
         /// <summary>
-        /// txtOZip control.
+        /// txttoZip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOZip;
+        protected global::System.Web.UI.WebControls.TextBox txttoZip;
         
         /// <summary>
-        /// txtOCity control.
+        /// txttoCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOCity;
+        protected global::System.Web.UI.WebControls.TextBox txttoCity;
         
         /// <summary>
-        /// ddlDCountry control.
+        /// ddlFrmCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDCountry;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFrmCountry;
         
         /// <summary>
-        /// txtDZip control.
+        /// txtfrmZip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDZip;
+        protected global::System.Web.UI.WebControls.TextBox txtfrmZip;
         
         /// <summary>
-        /// txtDCity control.
+        /// txtfrmCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDCity;
+        protected global::System.Web.UI.WebControls.TextBox txtfrmCity;
         
         /// <summary>
-        /// txtWidth control.
+        /// ckbDuti control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWidth;
+        protected global::System.Web.UI.WebControls.CheckBox ckbDuti;
         
         /// <summary>
-        /// txtLen control.
+        /// txtDV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLen;
+        protected global::System.Web.UI.WebControls.TextBox txtDV;
         
         /// <summary>
-        /// txtHeight control.
+        /// ddlNoPieces control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHeight;
+        protected global::System.Web.UI.WebControls.DropDownList ddlNoPieces;
         
         /// <summary>
-        /// txtWeight control.
+        /// ddlwUnit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWeight;
+        protected global::System.Web.UI.WebControls.DropDownList ddlwUnit;
+        
+        /// <summary>
+        /// ddlmUnit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlmUnit;
+        
+        /// <summary>
+        /// tbdetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tbdetails;
         
         /// <summary>
         /// btnGet control.
