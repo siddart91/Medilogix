@@ -13,6 +13,33 @@ namespace Medilogix {
     public partial class Home {
         
         /// <summary>
+        /// ddlfrmCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlfrmCountry;
+        
+        /// <summary>
+        /// txtfrmZip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtfrmZip;
+        
+        /// <summary>
+        /// txtfrmCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtfrmCity;
+        
+        /// <summary>
         /// ddltoCountry control.
         /// </summary>
         /// <remarks>
@@ -40,31 +67,13 @@ namespace Medilogix {
         protected global::System.Web.UI.WebControls.TextBox txttoCity;
         
         /// <summary>
-        /// ddlFrmCountry control.
+        /// txtShipDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFrmCountry;
-        
-        /// <summary>
-        /// txtfrmZip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfrmZip;
-        
-        /// <summary>
-        /// txtfrmCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfrmCity;
+        protected global::System.Web.UI.WebControls.TextBox txtShipDate;
         
         /// <summary>
         /// ckbDuti control.
@@ -94,22 +103,13 @@ namespace Medilogix {
         protected global::System.Web.UI.WebControls.DropDownList ddlNoPieces;
         
         /// <summary>
-        /// ddlwUnit control.
+        /// rbtnLUnits control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlwUnit;
-        
-        /// <summary>
-        /// ddlmUnit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlmUnit;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbtnLUnits;
         
         /// <summary>
         /// tbdetails control.

@@ -61,35 +61,34 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div>
-                <div>
-                    <div id="to">
-                        <div>To</div>
+            <div class="Quots-widget">
+                <div class="To-From">
+                    <div id="from" class="Quots-widget-box" style="margin-right: 15px;">
+                        <div class="Quots-widget-Header">From</div><br />
                         <label>Country</label>
-                        <asp:DropDownList ID="ddltoCountry" runat="server">
+                        <asp:DropDownList ID="ddlfrmCountry" runat="server">
                             <asp:ListItem Text="Canada" Value="CA"></asp:ListItem>
                         </asp:DropDownList><br />
-                        <label>Zip code</label><asp:TextBox ID="txttoZip" runat="server"></asp:TextBox><br />
-                        <label>City</label><asp:TextBox ID="txttoCity" runat="server"></asp:TextBox>
+                        <label>Zip code</label><asp:TextBox ID="txtfrmZip" runat="server" txttype="zip"></asp:TextBox><br />
+                        <label>City</label><asp:TextBox ID="txtfrmCity" runat="server" txttype="city"></asp:TextBox>
                     </div>
-                    <div id="from">
-                        <div>From</div>
+                    <div id="to" class="Quots-widget-box" style="margin-right: 17px;">
+                        <div class="Quots-widget-Header">To</div><br />
                         <label>Country</label>
-                        <asp:DropDownList ID="ddlFrmCountry" runat="server"></asp:DropDownList><br />
-                        <label>Zip code</label><asp:TextBox ID="txtfrmZip" runat="server"></asp:TextBox><br />
-                        <label>City</label><asp:TextBox ID="txtfrmCity" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="ddltoCountry" runat="server"></asp:DropDownList><br />
+                        <label>Zip code</label><asp:TextBox ID="txttoZip" runat="server" txttype="zip"></asp:TextBox><br />
+                        <label>City</label><asp:TextBox ID="txttoCity" runat="server" txttype="city"></asp:TextBox>
+                    </div>
+                    <div id="Ship-Details" class="Quots-widget-box">
+                        <div class="Quots-widget-Header">Shipment Details</div><br />
+                        <label>Shipping date</label><asp:TextBox ID="txtShipDate" runat="server" txttype="ShipDate"></asp:TextBox><br />
+                        <label>Dutiable Material</label><asp:CheckBox ID="ckbDuti" runat="server" /><br />
+                        <label>Declared value (CAD)</label><asp:TextBox ID="txtDV" runat="server" txttype="DV"></asp:TextBox>
                     </div>
                 </div>
-                <div>
-                    <label>Shipment Details</label>
-                    <div>
-                        <label>Shipping date</label>
-                    </div>
-                    <label>Dutiable Material</label><asp:CheckBox ID="ckbDuti" runat="server" />
-                    <label>Declared value (CAD)</label><asp:TextBox ID="txtDV" runat="server"></asp:TextBox>
-                </div>
-                <div>
-                    <div>Piece Details</div>
+                
+                <div class="Quots-widget-box" style="width:100%">
+                    <div class="Quots-widget-Header">Piece Details</div><br />
                     <div>
                         <label>Number of pieces</label>
                         <asp:DropDownList ID="ddlNoPieces" runat="server">
@@ -107,14 +106,15 @@
                     </div>
                     <div>
                         <label>Units</label>
-                        <asp:DropDownList ID="ddlwUnit" runat="server">
-                            <asp:ListItem>kg</asp:ListItem>
-                            <asp:ListItem>lb</asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:DropDownList ID="ddlmUnit" runat="server">
-                            <asp:ListItem>cm</asp:ListItem>
-                            <asp:ListItem>in</asp:ListItem>
-                        </asp:DropDownList>
+                        <div class="radiobuttoncontainer">
+                        <asp:RadioButtonList ID="rbtnLUnits" runat="server" CssClass="radiobuttonlist" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                            <asp:ListItem>kg/cm</asp:ListItem>
+                            <asp:ListItem>lb/in</asp:ListItem>
+                        </asp:RadioButtonList>
+                    </div>
+  <%--                  <div class="radiobuttonbackground">
+    <asp:PlaceHolder ID="phEntity"  runat="server"></asp:PlaceHolder>
+</div>--%>
                     </div>
                 </div>
                 <div>
