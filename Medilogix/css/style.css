@@ -325,18 +325,20 @@ font-size: 16px;
 .radiobuttonlist label
 {
     color: #3E3928;
-    background-color:#E8E5D4;
-    padding-left: 6px;
-    padding-right: 6px;
     padding-top: 2px;
     padding-bottom: 2px;
-    border: 1px solid #AAAAAA;
     margin: 0px 0px 0px 0px;
-    white-space: nowrap;
-    clear: left;
-    margin-right: 5px;
+    width: 60px;
+    text-align: center;
+    transition: background-color 0.5s ,color 0.5s;
 }
-.radiobuttoncontainer span,.selectedradio label
+.radiobuttoncontainer{
+    width: 122px;
+display: inline-block;
+border: 1px solid #42b0d4;
+box-shadow: inset 0px 0px 2px 0px rgba(66, 176, 212,0.5);
+}
+.radiobuttoncontainer span .selectedradio label
 {
     background-color: #F7F5E8;
     color: #000000;
@@ -347,9 +349,13 @@ font-size: 16px;
 }
 .radiobuttonlist label:hover
 {
-    color: #CC3300;
-    background: #D1CFC2;
+    /*color: white;
+    background: #42b0d4;*/
     cursor:pointer;
+}
+
+.radiobuttonlist input[type="radio"]{
+    display:none;
 }
  
 /*.radiobuttoncontainer

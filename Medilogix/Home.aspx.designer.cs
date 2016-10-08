@@ -121,6 +121,42 @@ namespace Medilogix {
         protected global::System.Web.UI.WebControls.Table tbdetails;
         
         /// <summary>
+        /// txtWeight1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtWeight1;
+        
+        /// <summary>
+        /// txtLen1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLen1;
+        
+        /// <summary>
+        /// txtWidth1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtWidth1;
+        
+        /// <summary>
+        /// txtHeight1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHeight1;
+        
+        /// <summary>
         /// btnGet control.
         /// </summary>
         /// <remarks>

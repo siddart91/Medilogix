@@ -2,6 +2,11 @@
     LoginW();
     AccW();
     //bodyClick();
+    $(".radiobuttonlist label").each(function (n) {
+        $(this).attr("id", "lblckbox" + n);
+    });
+    $("#lblckbox0").css({ "background-color": "#42b0d4", "color": "white" });
+    activeCKbox();
 });
 function LoginW() {
     var ctr = 0;
@@ -78,3 +83,14 @@ function ShowHide() {
         $("#pStat").addClass("L-stat-Hide");
     }, 5000);
 };
+
+function activeCKbox() {
+    $("#lblckbox0").click(function () {
+        $("#lblckbox0").css({ "background-color": "#42b0d4", "color": "white" });
+        $("#lblckbox1").css({ "background-color": "rgba(255,255,255,0)", "color": "#3E3928" });
+    });
+    $("#lblckbox1").click(function () {
+        $("#lblckbox1").css({ "background-color": "#42b0d4", "color": "white" });
+        $("#lblckbox0").css({ "background-color": "rgba(255,255,255,0)", "color": "#3E3928" });
+    });
+}

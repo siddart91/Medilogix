@@ -64,7 +64,8 @@
             <div class="Quots-widget">
                 <div class="To-From">
                     <div id="from" class="Quots-widget-box" style="margin-right: 15px;">
-                        <div class="Quots-widget-Header">From</div><br />
+                        <div class="Quots-widget-Header">From</div>
+                        <br />
                         <label>Country</label>
                         <asp:DropDownList ID="ddlfrmCountry" runat="server">
                             <asp:ListItem Text="Canada" Value="CA"></asp:ListItem>
@@ -73,24 +74,27 @@
                         <label>City</label><asp:TextBox ID="txtfrmCity" runat="server" txttype="city"></asp:TextBox>
                     </div>
                     <div id="to" class="Quots-widget-box" style="margin-right: 17px;">
-                        <div class="Quots-widget-Header">To</div><br />
+                        <div class="Quots-widget-Header">To</div>
+                        <br />
                         <label>Country</label>
                         <asp:DropDownList ID="ddltoCountry" runat="server"></asp:DropDownList><br />
                         <label>Zip code</label><asp:TextBox ID="txttoZip" runat="server" txttype="zip"></asp:TextBox><br />
                         <label>City</label><asp:TextBox ID="txttoCity" runat="server" txttype="city"></asp:TextBox>
                     </div>
                     <div id="Ship-Details" class="Quots-widget-box">
-                        <div class="Quots-widget-Header">Shipment Details</div><br />
+                        <div class="Quots-widget-Header">Shipment Details</div>
+                        <br />
                         <label>Shipping date</label><asp:TextBox ID="txtShipDate" runat="server" txttype="ShipDate"></asp:TextBox><br />
                         <label>Dutiable Material</label><asp:CheckBox ID="ckbDuti" runat="server" /><br />
                         <label>Declared value (CAD)</label><asp:TextBox ID="txtDV" runat="server" txttype="DV"></asp:TextBox>
                     </div>
                 </div>
-                
-                <div class="Quots-widget-box" style="width:100%">
-                    <div class="Quots-widget-Header">Piece Details</div><br />
-                    <div>
-                        <label>Number of pieces</label>
+
+                <div class="Quots-widget-box" style="width: 100%">
+                    <div class="Quots-widget-Header">Piece Details</div>
+                    <br />
+                    <div style="display: inline-block; width: 25%;">
+                        <label style="padding: 5px 15px;">Number of pieces</label>
                         <asp:DropDownList ID="ddlNoPieces" runat="server">
                             <asp:ListItem Selected="True">1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -104,30 +108,35 @@
                             <asp:ListItem>10</asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    <div>
-                        <label>Units</label>
+                    <div style="display: inline-block; width: 49%;">
+                        <label style="padding: 5px 15px;">Units</label>
                         <div class="radiobuttoncontainer">
-                        <asp:RadioButtonList ID="rbtnLUnits" runat="server" CssClass="radiobuttonlist" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                            <asp:ListItem>kg/cm</asp:ListItem>
-                            <asp:ListItem>lb/in</asp:ListItem>
-                        </asp:RadioButtonList>
+                            <asp:RadioButtonList ID="rbtnLUnits" runat="server" CssClass="radiobuttonlist" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                                <asp:ListItem Selected="True">kg/cm</asp:ListItem>
+                                <asp:ListItem>lb/in</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </div>
                     </div>
-  <%--                  <div class="radiobuttonbackground">
-    <asp:PlaceHolder ID="phEntity"  runat="server"></asp:PlaceHolder>
-</div>--%>
+                    <div>
+                        <asp:Table ID="tbdetails" runat="server">
+                            <asp:TableHeaderRow>
+                                <asp:TableHeaderCell>No.</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Weight</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Length</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Width</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Height</asp:TableHeaderCell>
+                            </asp:TableHeaderRow>
+                            <asp:TableRow>
+                                <asp:TableCell>1.</asp:TableCell>
+                                <asp:TableCell><asp:TextBox ID="txtWeight1" runat="server"></asp:TextBox></asp:TableCell>
+                                <asp:TableCell><asp:TextBox ID="txtLen1" runat="server"></asp:TextBox></asp:TableCell>
+                                <asp:TableCell><asp:TextBox ID="txtWidth1" runat="server"></asp:TextBox></asp:TableCell>
+                                <asp:TableCell><asp:TextBox ID="txtHeight1" runat="server"></asp:TextBox></asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
                     </div>
                 </div>
-                <div>
-                    <asp:Table ID="tbdetails" runat="server">
-                        <asp:TableHeaderRow>
-                            <asp:TableHeaderCell>No.</asp:TableHeaderCell>
-                            <asp:TableHeaderCell>Weight</asp:TableHeaderCell>
-                            <asp:TableHeaderCell>Length</asp:TableHeaderCell>
-                            <asp:TableHeaderCell>Width</asp:TableHeaderCell>
-                            <asp:TableHeaderCell>Height</asp:TableHeaderCell>
-                        </asp:TableHeaderRow>
-                    </asp:Table>
-                </div>
+
             </div>
             <div class="r-submit" align="center">
                 <asp:Button ID="btnGet" runat="server" Text="      Get Quote       " OnClick="btnGet_Click" Style="font-weight: bolder; font-size: 25px; background-color: #FF0000; border-radius: 20px;" />
