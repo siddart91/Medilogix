@@ -95,7 +95,7 @@
                     <br />
                     <div style="display: inline-block; width: 25%;">
                         <label style="padding: 5px 15px;">Number of pieces</label>
-                        <asp:DropDownList ID="ddlNoPieces" runat="server">
+                        <asp:DropDownList ID="ddlNoPieces" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlNoPieces_SelectedIndexChanged">
                             <asp:ListItem Selected="True">1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
                             <asp:ListItem>3</asp:ListItem>
@@ -117,8 +117,10 @@
                             </asp:RadioButtonList>
                         </div>
                     </div>
-                    <div>
-                        <asp:Table ID="tbdetails" runat="server">
+                    <div class="tb-wrap">
+                        <asp:UpdatePanel ID="upPackdetails" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                        <asp:Table ID="tbdetails" runat="server" CssClass="tbPackDetails">
                             <asp:TableHeaderRow>
                                 <asp:TableHeaderCell>No.</asp:TableHeaderCell>
                                 <asp:TableHeaderCell>Weight</asp:TableHeaderCell>
@@ -134,6 +136,11 @@
                                 <asp:TableCell><asp:TextBox ID="txtHeight1" runat="server"></asp:TextBox></asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
+                                </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger  ControlID="ddlNoPieces" EventName=""/>
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </div>
                 </div>
 

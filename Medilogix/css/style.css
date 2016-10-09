@@ -373,6 +373,15 @@ box-shadow: inset 0px 0px 2px 0px rgba(66, 176, 212,0.5);
     background-color:#F3F2E7;
 }*/
 /*demo end*/
+.tb-wrap{
+        width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tbPackDetails{
+    width:100%
+}
+}
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
 	nav { 

@@ -183,5 +183,52 @@ namespace Medilogix
                 throw es;
             }
         }
+
+        protected void ddlNoPieces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int NoOfPieces = ddlNoPieces.SelectedIndex;
+            GenerateTableRow(NoOfPieces);
+        }
+
+        public void GenerateTableRow(int rows)
+        {
+            for(int i = 2; i <= rows + 1; i++)
+            {
+                TableRow row = new TableRow();
+                for(int j = 1; j <= 5; j++)
+                {
+                    TableCell cell = new TableCell();
+                    TextBox tb = new TextBox();
+                    switch (j)
+                    {
+                        case 1:
+                            cell.Text = i + ".";
+                            break;
+                        case 2:
+                            tb.ID = "txtWeight" + i;
+                            cell.Controls.Add(tb);
+                            break;
+                        case 3:
+                            tb.ID = "txtLen" + i;
+                            cell.Controls.Add(tb);
+                            break;
+                        case 4:
+                            tb.ID = "txtWidth" + i;
+                            cell.Controls.Add(tb);
+                            break;
+                        case 5:
+                            tb.ID = "txtHeight" + i;
+                            cell.Controls.Add(tb);
+                            break;
+                    }
+                    
+                    //cell.Controls.Add(tb);
+                    row.Cells.Add(cell);
+                }
+                tbdetails.Rows.Add(row);
+            }
+            
+
+        }
     }
 }
