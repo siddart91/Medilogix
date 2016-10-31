@@ -13,11 +13,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="Calendar/codebase/dhtmlxcalendar.css" rel="stylesheet" />
+    <link href="Calendar/codebase/fonts/font_awesome/css/font-awesome.min.css" rel="stylesheet" />
 <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="Calendar/codebase/dhtmlxcalendar.js"></script>
+    
 <!---- start-smooth-scrolling---->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+    <style>
+		#calendar,
+		#calendar2,
+		#calendar3 {
+			border: 1px solid #dfdfdf;
+			font-family: Roboto, Arial, Helvetica;
+			font-size: 14px;
+			color: #404040;
+		}
+	</style>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -25,10 +39,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 				});
 			});
-		</script>
-<!---end-smooth-scrolling-->
-<!--start-top-nav-script-->
-		<script>
+//<!---end-smooth-scrolling-->
+//<!--start-top-nav-script-->
+<%--		<script>--%>
 			$(function() {
 				var pull 		= $('#pull');
 					menu 		= $('nav ul');
@@ -44,12 +57,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        		}
 	    		});
 			});
+			var myCalendar;
+			function doOnLoad() {
+			    myCalendar = new dhtmlXCalendarObject(["ContentPlaceHolder1_txtShipDate", "cal_2", "cal_3"]);
+			    var d = myCalendar.getFormatedDate("%Y-%m-%j", new Date());
+			    myCalendar.setSensitiveRange(d, null);
+			}
 		</script>
 <!--End-top-nav-script-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body onload="doOnLoad();">
     <form id="form1" runat="server">
         <!--start-header-->
 					<div class="header" id="home">

@@ -95,6 +95,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="Calendar\codebase\dhtmlxcalendar.css" />
+    <Content Include="Calendar\codebase\dhtmlxcalendar.js" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\css\font-awesome.css" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\css\font-awesome.min.css" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\LICENSE-2.0.txt" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\roboto.css" />
+    <Content Include="Calendar\codebase\imgs\dhxcalendar_material\dhxcalendar_arrow_left.png" />
+    <Content Include="Calendar\codebase\imgs\dhxcalendar_material\dhxcalendar_arrow_right.png" />
+    <Content Include="Calendar\codebase\imgs\dhxcalendar_material\dhxcalendar_clock.png" />
+    <Content Include="Calendar\codebase\imgs\dhxcalendar_material\dhxcalendar_marker.gif" />
+    <Content Include="Calendar\codebase\imgs\dhxcalendar_material\dhxcalendar_selector_bottom.gif" />
+    <Content Include="Calendar\codebase\imgs\dhxcalendar_material\dhxcalendar_selector_top.gif" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\common.css" />
@@ -169,6 +182,46 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Main.Master" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\fonts\FontAwesome.otf" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\animated.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\bordered-pulled.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\core.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\fixed-width.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\font-awesome.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\icons.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\larger.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\list.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\mixins.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\path.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\rotated-flipped.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\stacked.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\less\variables.less" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\font-awesome.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_animated.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_core.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_fixed-width.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_icons.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_larger.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_list.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_mixins.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_path.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_stacked.scss" />
+    <Content Include="Calendar\codebase\fonts\font_awesome\scss\_variables.scss" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\CWB0XYA8bzo0kSThX0UTuA.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="Calendar\codebase\fonts\font_roboto\u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,7 +234,9 @@
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Services.aspx" />
-    <Content Include="Valid10_Quote_AP_PriceBreakdownRAS_Request.xml" />
+    <Content Include="Valid10_Quote_AP_PriceBreakdownRAS_Request.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

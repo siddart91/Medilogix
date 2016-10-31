@@ -64,7 +64,7 @@
             <div class="Quots-widget">
                 <div class="To-From">
                     <div id="from" class="Quots-widget-box" style="margin-right: 15px;">
-                        <div class="Quots-widget-Header">From</div>
+                        <div class="Quots-widget-Header">From<i class="fa fa-location-arrow" aria-hidden="true"></i></div>
                         <br />
                         <label>Country</label>
                         <asp:DropDownList ID="ddlfrmCountry" runat="server">
@@ -74,7 +74,7 @@
                         <label>City</label><asp:TextBox ID="txtfrmCity" runat="server" txttype="city"></asp:TextBox>
                     </div>
                     <div id="to" class="Quots-widget-box" style="margin-right: 17px;">
-                        <div class="Quots-widget-Header">To</div>
+                        <div class="Quots-widget-Header">To<i class="fa fa-map-marker" aria-hidden="true"></i></div>
                         <br />
                         <label>Country</label>
                         <asp:DropDownList ID="ddltoCountry" runat="server"></asp:DropDownList><br />
@@ -82,9 +82,9 @@
                         <label>City</label><asp:TextBox ID="txttoCity" runat="server" txttype="city"></asp:TextBox>
                     </div>
                     <div id="Ship-Details" class="Quots-widget-box">
-                        <div class="Quots-widget-Header">Shipment Details</div>
+                        <div class="Quots-widget-Header">Shipment Details<i class="fa fa-calendar" aria-hidden="true"></i></div>
                         <br />
-                        <label>Shipping date</label><asp:TextBox ID="txtShipDate" runat="server" txttype="ShipDate"></asp:TextBox><br />
+                        <label>Shipping date</label><asp:TextBox ID="txtShipDate" runat="server" txttype="ShipDate" MaxLength="10" ToolTip="YYYY-MM-DD"></asp:TextBox><br />
                         <label>Dutiable Material</label><asp:CheckBox ID="ckbDuti" runat="server" /><br />
                         <label>Declared value (CAD)</label><asp:TextBox ID="txtDV" runat="server" txttype="DV"></asp:TextBox>
                     </div>

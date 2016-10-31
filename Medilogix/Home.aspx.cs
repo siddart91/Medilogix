@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,16 +16,28 @@ namespace Medilogix
 {
     public partial class Home : System.Web.UI.Page
     {
+        // Connection String
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["mystr"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SqlCommand cmd = new SqlCommand("Select DHL_C_Code, Country_Name from Country", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            ddltoCountry.DataSource = ds.Tables[0];
+            ddltoCountry.DataTextField = "Country_Name";
+            ddltoCountry.DataValueField = "DHL_C_Code";
+            ddltoCountry.DataBind();
+            ddltoCountry.Items.Insert(0, new ListItem("--Select Country--", "0"));
         }
 
         protected void btnGet_Click(object sender, EventArgs e)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Users\Siddharth\Desktop\MedilogixNew\Medilogix\Medilogix\Valid10_Quote_AP_PriceBreakdownRAS_Request.xml");
-            string str = GetXMLAsString(doc);
+            //CreateReqXMLStr();
+           // XmlDocument doc = new XmlDocument();
+           // doc.Load(@"C:\Users\Siddharth\Desktop\MedilogixNew\Medilogix\Medilogix\Valid10_Quote_AP_PriceBreakdownRAS_Request.xml");
+            // string str = GetXMLAsString(doc);
+            string str = CreateReqXMLStr();
             string requestText = str;
 
             WebRequest requestRate = HttpWebRequest.Create("http://xmlpitest-ea.dhl.com/XMLShippingServlet");
@@ -52,7 +66,7 @@ namespace Medilogix
             reader1 = new XmlTextReader(stream1);
             xmlDS.ReadXml(reader1);
             DataTable dt = new DataTable();
-            dt = xmlDS.Tables[6];
+            //dt = xmlDS.Tables[6];
             //GridView1.DataSource = GetTableNames(respStream);
             //GridView1.DataBind();
             repQuotes.DataSource = GetTableNamess(strResponse);
@@ -186,15 +200,19 @@ namespace Medilogix
 
         protected void ddlNoPieces_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Gets value for number of pieces
             int NoOfPieces = ddlNoPieces.SelectedIndex;
             GenerateTableRow(NoOfPieces);
         }
 
+        //Sets the number of pieces
         public void GenerateTableRow(int rows)
         {
+            //Looping to rows
             for(int i = 2; i <= rows + 1; i++)
             {
                 TableRow row = new TableRow();
+                //Looping the columns
                 for(int j = 1; j <= 5; j++)
                 {
                     TableCell cell = new TableCell();
@@ -227,8 +245,95 @@ namespace Medilogix
                 }
                 tbdetails.Rows.Add(row);
             }
-            
+        }
 
+        // Class to override string writer encoding
+        public class StringWriterWithEncoding : StringWriter
+        {
+            public StringWriterWithEncoding(StringBuilder sb, Encoding encoding)
+                : base(sb)
+            {
+                this.m_Encoding = encoding;
+            }
+            private readonly Encoding m_Encoding;
+            public override Encoding Encoding
+            {
+                get
+                {
+                    return this.m_Encoding;
+                }
+            }
+        }
+
+        //Class to generate xml request for quotes
+        public string CreateReqXMLStr()
+        {
+            string xmlstr = null; //return string
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.CloseOutput = true;
+
+            StringBuilder sb = new StringBuilder();
+            // String writer with encoding UTF8
+            StringWriterWithEncoding stringWriter = new StringWriterWithEncoding(sb, Encoding.UTF8);
+
+            XmlWriter writer = XmlWriter.Create(stringWriter, settings); 
+
+            writer.WriteStartDocument();
+                writer.WriteStartElement("p","DCTRequest", "http://www.dhl.com");
+            writer.WriteAttributeString("xmlns", "xsi", null, "http://www.w3.org/2001/XMLSchema-instance");
+            writer.WriteAttributeString("xsi", "schemaLocation", null, "http://www.dhl.com DCT-req.xsd ");
+                
+                writer.WriteAttributeString("xmlns", "p2", null, "http://www.dhl.com/DCTRequestdatatypes");
+                writer.WriteAttributeString("xmlns", "p1", null, "http://www.dhl.com/datatypes");
+                writer.WriteAttributeString("xmlns", "p", null, "http://www.dhl.com");
+                writer.WriteStartElement("GetQuote");
+                writer.WriteStartElement("Request");
+                writer.WriteStartElement("ServiceHeader");
+                writer.WriteElementString("MessageTime", "2002-08-20T16:28:56.000-08:00");
+                writer.WriteElementString("MessageReference", "1234567890123456789012345678901");
+                writer.WriteElementString("SiteID", "medilogs");
+                writer.WriteElementString("Password", "21J3diDp9Q");
+                writer.WriteEndElement();//ServiceHeader
+            writer.WriteEndElement();//Request
+            writer.WriteStartElement("From");
+            writer.WriteElementString("CountryCode", "CA");
+            writer.WriteElementString("Postalcode", "N5V1M7");
+            writer.WriteEndElement();//From
+            writer.WriteStartElement("BkgDetails");
+            writer.WriteElementString("PaymentCountryCode", "CA");
+            writer.WriteElementString("Date", "2016-10-31");
+            writer.WriteElementString("ReadyTime", "PT10H21M");
+            writer.WriteElementString("ReadyTimeGMTOffset", "+01:00");
+            writer.WriteElementString("DimensionUnit", "CM");
+            writer.WriteElementString("WeightUnit", "KG");
+            writer.WriteStartElement("Pieces");
+            writer.WriteStartElement("Piece");
+            writer.WriteElementString("PieceID", "1");
+            writer.WriteElementString("Height", "30");
+            writer.WriteElementString("Depth", "20");
+            writer.WriteElementString("Width", "10");
+            writer.WriteElementString("Weight", "1.0");
+            writer.WriteEndElement();//Piece
+            writer.WriteEndElement();//Pieces
+            writer.WriteElementString("IsDutiable", "Y");
+            writer.WriteElementString("NetworkTypeCode", "AL");
+            writer.WriteElementString("InsuredValue", "10.00");
+            writer.WriteElementString("InsuredCurrency", "CAD");
+            writer.WriteEndElement();//BkgDetails
+            writer.WriteStartElement("To");
+            writer.WriteElementString("CountryCode", "US");
+            writer.WriteElementString("Postalcode", "10006");
+            writer.WriteEndElement();//To
+            writer.WriteStartElement("Dutiable");
+            writer.WriteElementString("DeclaredCurrency", "CAD");
+            writer.WriteElementString("DeclaredValue", "20.0");
+            writer.WriteEndElement();//Dutiable
+            writer.WriteEndElement();//GetQuote
+            writer.Close();
+                xmlstr = sb.ToString();
+            
+                return xmlstr;
         }
     }
 }
