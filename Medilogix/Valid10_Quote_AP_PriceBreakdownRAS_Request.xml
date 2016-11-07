@@ -3,8 +3,8 @@
   <GetQuote>
     <Request>
       <ServiceHeader>
-        <MessageTime>2002-08-20T16:28:56.000-08:00</MessageTime>
-        <MessageReference>1234567890123456789012345678901</MessageReference>
+        <MessageTime>2016-11-06T16:28:56.000-08:00</MessageTime>
+        <MessageReference>1234567890123458429012345678901</MessageReference>
         <SiteID>medilogs</SiteID>
         <Password>21J3diDp9Q</Password>
       </ServiceHeader>
@@ -15,7 +15,7 @@
     </From>
     <BkgDetails>
       <PaymentCountryCode>CA</PaymentCountryCode>
-      <Date>2016-09-25</Date>
+      <Date>2016-11-07</Date>
       <ReadyTime>PT10H21M</ReadyTime>
       <ReadyTimeGMTOffset>+01:00</ReadyTimeGMTOffset>
       <DimensionUnit>CM</DimensionUnit>
@@ -38,7 +38,7 @@
       </Pieces> 
       <IsDutiable>Y</IsDutiable>
       <NetworkTypeCode>AL</NetworkTypeCode>	
-      <InsuredValue>10.00</InsuredValue>
+      <InsuredValue>0.00</InsuredValue>
       <InsuredCurrency>CAD</InsuredCurrency>
     </BkgDetails>
     <To>
@@ -47,7 +47,7 @@
     </To>
    <Dutiable>
       <DeclaredCurrency>CAD</DeclaredCurrency>
-      <DeclaredValue>20.0</DeclaredValue>
+      <DeclaredValue>00.0</DeclaredValue>
     </Dutiable>
   </GetQuote>
 </p:DCTRequest>

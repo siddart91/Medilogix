@@ -67,7 +67,7 @@
                         <div class="Quots-widget-Header">From<i class="fa fa-location-arrow" aria-hidden="true"></i></div>
                         <br />
                         <label>Country</label>
-                        <asp:DropDownList ID="ddlfrmCountry" runat="server">
+                        <asp:DropDownList ID="ddlfrmCountry" runat="server" AutoPostBack="true">
                             <asp:ListItem Text="Canada" Value="CA"></asp:ListItem>
                         </asp:DropDownList><br />
                         <label>Zip code</label><asp:TextBox ID="txtfrmZip" runat="server" txttype="zip"></asp:TextBox><br />
@@ -77,7 +77,7 @@
                         <div class="Quots-widget-Header">To<i class="fa fa-map-marker" aria-hidden="true"></i></div>
                         <br />
                         <label>Country</label>
-                        <asp:DropDownList ID="ddltoCountry" runat="server"></asp:DropDownList><br />
+                        <asp:DropDownList ID="ddltoCountry" runat="server" AutoPostBack="false"></asp:DropDownList><br />
                         <label>Zip code</label><asp:TextBox ID="txttoZip" runat="server" txttype="zip"></asp:TextBox><br />
                         <label>City</label><asp:TextBox ID="txttoCity" runat="server" txttype="city"></asp:TextBox>
                     </div>
